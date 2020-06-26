@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Yelp Prototype</string>
+    <string name="text_no_connectivity">No Internet Connection</string>
+    <string name="text_connectivity">Back Online</string>
+    <string name="text_item_header">Item Header</string>
+    <string name="exit_dialog_message">Are you sure want to close the app?</string>
+    <string name="exit_dialog_title">Exit</string>
+    <string name="option_yes">Yes</string>
+    <string name="option_no">No</string>
+    <string name="term">Term (ex. food, restaurant, Starbucks)</string>
+    <string name="location">Location (ex. NYC, NY 10118)</string>
+</resources>
