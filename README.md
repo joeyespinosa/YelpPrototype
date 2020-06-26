@@ -10,7 +10,7 @@ Application demo utilizing Yelp API
 ## Built with the following dependencies
 - [Kotlin](https://kotlinlang.org/)
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
-- [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/
+- [Flow](https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/)
 - [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) 
   - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) 
   - [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) 
