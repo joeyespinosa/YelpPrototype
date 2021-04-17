@@ -13,6 +13,13 @@ interface YelpService {
         @Query("location") location: String?
     ): Response<Businesses>
 
+    @GET("businesses/search")
+    suspend fun getBusinessesByCurrentLocation(
+        @Query("term") term: String?,
+        @Query("latitude") latiude: Double,
+        @Query("longitude") longitude: Double
+    ): Response<Businesses>
+
     companion object {
         const val API_URL = "https://api.yelp.com/v3/"
     }

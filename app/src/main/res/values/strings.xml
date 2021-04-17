@@ -9,4 +9,8 @@
     <string name="option_no">No</string>
     <string name="term">Term (ex. food, restaurant, Starbucks)</string>
     <string name="location">Location (ex. NYC, NY 10118)</string>
+
+    <string name="location_required_error">Location services must be enabled to use the app</string>
+    <string name="permission_denied_explanation">You need to grant location permission.</string>
+    <string name="settings">Settings</string>
 </resources>

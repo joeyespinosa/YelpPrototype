@@ -4,16 +4,17 @@ plugins {
     id("kotlin-kapt")
     id("kotlin-android-extensions")
     id("dagger.hilt.android.plugin")
+    id("com.google.gms.google-services")
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(30)
     buildToolsVersion("29.0.3")
 
     defaultConfig {
         applicationId = "com.axelia.yelpprototype"
         minSdkVersion(21)
-        targetSdkVersion(29)
+        targetSdkVersion(30)
         versionCode = 1
         versionName = "1.0"
 
@@ -120,4 +121,7 @@ dependencies {
 
     // Gson
     implementation(Gson.gson)
+
+    implementation("com.google.android.gms:play-services-location:17.0.0")
+    implementation("com.google.android.gms:play-services-maps:17.0.0")
 }

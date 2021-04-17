@@ -50,6 +50,28 @@ class BusinessRepository @Inject constructor(
         }.asFlow().flowOn(Dispatchers.IO)
     }
 
+    fun getAllItemsByCurrentLocation(
+        term: String?,
+        latitude: Double,
+        longitude: Double
+    ): Flow<State<List<Business>>> {
+        return object : NetworkBoundRepository<List<Business>, Businesses>() {
+
+            override suspend fun saveRemoteData(response: Businesses) = itemsDao.insertItems(response.businesses)
+
+            override fun fetchFromLocal(): Flow<List<Business>> = itemsDao.getAllItems()
+
+            override suspend fun fetchFromRemote(): Response<Businesses> = apiService.getBusinessesByCurrentLocation(
+                term = term,
+                latiude = latitude,
+                longitude = longitude
+            )
+
+            override suspend fun deleteCurrentData() = itemsDao.deleteAllItems()
+
+        }.asFlow().flowOn(Dispatchers.IO)
+    }
+
     @MainThread
     fun getItemById(itemId: String): Flow<Business> = itemsDao.getItemById(itemId)
 

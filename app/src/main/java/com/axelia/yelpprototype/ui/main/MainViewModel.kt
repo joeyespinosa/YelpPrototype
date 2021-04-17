@@ -37,4 +37,18 @@ class MainViewModel @ViewModelInject constructor(private val repository: Busines
             }
         }
     }
+
+    fun getItemsByCurrentLocation(
+        term: String?,
+        latitude: Double,
+        longitude: Double
+    ) {
+        viewModelScope.launch {
+            repository.getAllItemsByCurrentLocation(
+                term, latitude, longitude
+            ).collect {
+                _businessLiveData.value = it
+            }
+        }
+    }
 }

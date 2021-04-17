@@ -19,6 +19,7 @@ object Dependencies {
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
     const val materialDialog = "com.afollestad.material-dialogs:core:3.2.1"
+    const val googleGms = "com.google.gms:google-services:4.3.3"
 }
 
 object Hilt {

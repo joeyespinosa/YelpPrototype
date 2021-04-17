@@ -49,6 +49,34 @@
                 android:inputType="textPersonName" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_search_by_location_entry"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:text="Enter loc"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            app:backgroundTint="@color/colorAccent"
+            app:icon="@drawable/ic_baseline_keyboard_24"
+            app:layout_constraintEnd_toStartOf="@id/button_search_by_current_location"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textinputlayout_term" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_search_by_current_location"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:text="Use Location"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
+            app:backgroundTint="@color/colorAccent"
+            app:icon="@drawable/ic_baseline_location_on_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button_search_by_location_entry"
+            app:layout_constraintTop_toBottomOf="@+id/textinputlayout_term" />
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textinputlayout_location"
             android:layout_width="match_parent"
@@ -57,7 +85,7 @@
             android:background="@android:color/transparent"
             android:hint="@string/location"
             style="@style/TextInputLayoutStyle"
-            app:layout_constraintTop_toBottomOf="@+id/textinputlayout_term">
+            app:layout_constraintTop_toBottomOf="@+id/button_search_by_location_entry">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/textinputedittext_location"
@@ -77,9 +105,10 @@
             android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
             app:backgroundTint="@color/colorAccent"
             app:icon="@drawable/ic_baseline_search"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textinputlayout_location" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_business"
