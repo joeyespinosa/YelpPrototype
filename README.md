@@ -7,7 +7,7 @@ Application demo utilizing Yelp API
 - Material Design and support Dark Theme
 - (2020/06/26) Temporarily saved API Key for testing purpose
 - (2021/04/18) Added a search using current device location for Udacity Kotlin Course. API keys saved for testing only and will remove once approved.
-- 
+
 ## Built with the following dependencies
 - [Kotlin](https://kotlinlang.org/)
 - [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html)
