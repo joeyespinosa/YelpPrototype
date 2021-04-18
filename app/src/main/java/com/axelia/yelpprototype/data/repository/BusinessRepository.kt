@@ -11,6 +11,7 @@ import com.axelia.yelpprototype.utils.State
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flowOn
 import retrofit2.Response
 import javax.inject.Inject
@@ -74,6 +75,13 @@ class BusinessRepository @Inject constructor(
 
     @MainThread
     fun getItemById(itemId: String): Flow<Business> = itemsDao.getItemById(itemId)
+
+    suspend fun favoriteItem(itemId: String): Int = itemsDao.favoriteItem(itemId)
+
+    suspend fun removeAsFavoriteItem(itemId: String): Int = itemsDao.removeAsFavoriteItem(itemId)
+
+    @MainThread
+    fun getAllItemFavorites(): Flow<List<Business>> = itemsDao.getAllItemFavorites()
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
 

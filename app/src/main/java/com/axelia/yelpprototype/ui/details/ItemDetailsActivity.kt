@@ -2,12 +2,14 @@ package com.axelia.yelpprototype.ui.details
 
 import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
 import androidx.core.app.ShareCompat
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import coil.api.load
 import com.axelia.yelpprototype.R
@@ -18,6 +20,7 @@ import com.google.android.material.chip.Chip
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_business_details.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.runBlocking
 
 @ExperimentalCoroutinesApi
 @AndroidEntryPoint
@@ -72,9 +75,25 @@ class ItemDetailsActivity : BaseActivity<ItemDetailsViewModel, ActivityBusinessD
                     chip.setChipBackgroundColorResource(android.R.color.transparent)
                     chipGroup.addView(chip)
                 }
+
+                imageviewIsFavorite.background = getFavoriteIcon(item.isFavorite!!)
+
+                imageviewIsFavorite.setOnClickListener {
+                    runBlocking {
+                        mViewModel.onFavoriteClicked()
+                    }
+                }
             }
             mViewBinding.imageviewDetails.load(item.imageUrl)
         })
+    }
+
+    private fun getFavoriteIcon(isFavorite : Boolean) : Drawable? {
+        return if (isFavorite) {
+            ContextCompat.getDrawable(mViewBinding.root.context, R.drawable.ic_baseline_favorite_24)
+        } else {
+            ContextCompat.getDrawable(mViewBinding.root.context, R.drawable.ic_baseline_favorite_border_24)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

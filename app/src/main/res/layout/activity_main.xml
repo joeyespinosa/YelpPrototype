@@ -6,11 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.constraintlayout.motion.widget.MotionLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:animateLayoutChanges="true"
         android:background="@color/itemBackground"
+        app:layoutDescription="@xml/main_scene"
         tools:context=".ui.main.MainActivity">
 
         <LinearLayout
@@ -55,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_8"
-            android:text="Enter loc"
+            android:text="@string/enter_loc"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
             app:backgroundTint="@color/colorAccent"
             app:icon="@drawable/ic_baseline_keyboard_24"
@@ -69,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_8"
-            android:text="Use Location"
+            android:text="@string/use_location"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
             app:backgroundTint="@color/colorAccent"
             app:icon="@drawable/ic_baseline_location_on_24"
@@ -101,7 +102,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_8"
-            android:text="Search"
+            android:text="@string/search"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Button"
             app:backgroundTint="@color/colorAccent"
             app:icon="@drawable/ic_baseline_search"
@@ -119,5 +120,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_search"
             tools:listitem="@layout/item_business" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
