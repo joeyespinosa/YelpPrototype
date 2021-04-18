@@ -24,6 +24,15 @@
             android:layout_marginBottom="@dimen/dimen_8"
             tools:text="@tools:sample/lorem" />
 
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@drawable/ic_baseline_favorite_border_24"
+            android:id="@+id/imageview_is_favorite"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
         <TextView
             android:id="@+id/textview_business_rating"
             style="@style/BusinessRatingDetailText"

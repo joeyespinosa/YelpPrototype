@@ -33,7 +33,9 @@ data class Business(
     val rating: Double? = 0.00,
     val review_count: Int? = 0,
 
-    val url: String? = ""
+    val url: String? = "",
+
+    var isFavorite: Boolean? = false
 ) {
     companion object {
         const val TABLE_NAME = "business"

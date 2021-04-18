@@ -21,4 +21,13 @@ interface BusinessDao {
 
     @Query("SELECT * FROM ${Business.TABLE_NAME}")
     fun getAllItems(): Flow<List<Business>>
+
+    @Query("SELECT * FROM ${Business.TABLE_NAME} WHERE isFavorite = 1")
+    fun getAllItemFavorites(): Flow<List<Business>>
+
+    @Query("UPDATE ${Business.TABLE_NAME} SET isFavorite = 1 WHERE id = :itemId")
+    suspend fun favoriteItem(itemId: String): Int
+
+    @Query("UPDATE ${Business.TABLE_NAME} SET isFavorite = 0 WHERE id = :itemId")
+    suspend fun removeAsFavoriteItem(itemId: String): Int
 }

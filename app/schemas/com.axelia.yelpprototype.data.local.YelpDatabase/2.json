@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "23e666b8fe2cd2b3f88ef0a15f72ea7e",
+    "identityHash": "46e8a58c2e2ff649fa30c53112ba4970",
     "entities": [
       {
         "tableName": "business",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `alias` TEXT, `categories` TEXT NOT NULL, `displayPhone` TEXT, `distance` REAL, `imageUrl` TEXT, `is_closed` INTEGER, `location` TEXT NOT NULL, `name` TEXT, `phone` TEXT, `price` TEXT, `rating` REAL, `review_count` INTEGER, `url` TEXT, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `alias` TEXT, `categories` TEXT NOT NULL, `displayPhone` TEXT, `distance` REAL, `imageUrl` TEXT, `is_closed` INTEGER, `location` TEXT NOT NULL, `name` TEXT, `phone` TEXT, `price` TEXT, `rating` REAL, `review_count` INTEGER, `url` TEXT, `isFavorite` INTEGER, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -91,6 +91,12 @@
             "columnName": "url",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -106,7 +112,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '23e666b8fe2cd2b3f88ef0a15f72ea7e')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '46e8a58c2e2ff649fa30c53112ba4970')"
     ]
   }
 }

@@ -33,6 +33,7 @@ import com.axelia.yelpprototype.databinding.ActivityMainBinding
 import com.axelia.yelpprototype.model.Business
 import com.axelia.yelpprototype.ui.base.BaseActivity
 import com.axelia.yelpprototype.ui.details.ItemDetailsActivity
+import com.axelia.yelpprototype.ui.favorites.FavoritesActivity
 import com.axelia.yelpprototype.ui.main.adapter.BusinessListAdapter
 import com.axelia.yelpprototype.utils.*
 import com.google.android.gms.location.*
@@ -245,6 +246,9 @@ class MainActivity : BaseActivity<MainViewModel, ActivityMainBinding>(),
                     AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY
                 }
             AppCompatDelegate.setDefaultNightMode(mode)
+        } else if (item.itemId == R.id.action_favorites) {
+            val intent = Intent(this, FavoritesActivity::class.java)
+            startActivity(intent)
         }
 
         return true
